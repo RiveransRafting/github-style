@@ -15,9 +15,12 @@ window.addEventListener('load', function () {
         }
     };
     
-    document.getElementById("switch_theme_button").addEventListener("click", function () {
-        switchTheme();
-    });
+    const switch_theme_button = document.getElementById("switch_theme_button");
+    if (switch_theme_button) {
+        switch_theme_button.addEventListener("click", function () {
+            switchTheme();
+        });
+    }
     
     var style = localStorage.getItem('data-color-mode')
     githubIconElement = document.getElementById('github-icon')
