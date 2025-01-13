@@ -15,12 +15,18 @@ window.addEventListener('load', function () {
         }
     };
     
-    const switch_theme_button = document.getElementById("switch_theme_button");
-    if (switch_theme_button) {
-        switch_theme_button.addEventListener("click", function () {
+    const switch_theme_buttons = document.querySelectorAll('.js-onclick-switch-theme');
+    for (let i = 0; i < switch_theme_buttons.length; i++) {
+        const element = switch_theme_buttons[i];
+        element.addEventListener('click', _ => {
             switchTheme();
         });
     }
+
+    const hamburger = document.getElementById('hamburger-menu');
+    hamburger.addEventListener('click', _ => {
+        document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'
+    });
     
     var style = localStorage.getItem('data-color-mode')
     githubIconElement = document.getElementById('github-icon')
